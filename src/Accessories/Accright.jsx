@@ -31,14 +31,14 @@ const Accright = () => {
         animate="visible"
       >
         {[
-          "src/assets/photo/ac1.jpg",
-          "src/assets/photo/ac5.jpg",
-          "src/assets/photo/ac6.jpg",
-          "src/assets/photo/ac2.jpg",
-          "src/assets/photo/ac3.jpg",
-          "src/assets/photo/ac4.jpg",
-          "src/assets/photo/ac5.jpg",
-          "src/assets/photo/ac6.jpg",
+          "ac1.jpg",
+          "ac5.jpg",
+          "ac6.jpg",
+          "ac2.jpg",
+          "ac3.jpg",
+          "ac4.jpg",
+          "ac5.jpg",
+          "ac6.jpg",
         ].map((src, i) => (
           <motion.img
             key={i}

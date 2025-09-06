@@ -6,7 +6,7 @@ import Items from "./Items";
 
 const Men = () => {
   return (
-    <div className="pt-50  sm:pt-52">
+    <div className="pt-50 sm:pt-52">
       {/* Heading */}
       <div className="px-4 sm:pl-8 text-xs sm:text-sm pb-15 sm:pb-10">
         <h2 className="text-xl sm:text-2xl font-semibold text-black pb-2">
@@ -35,7 +35,7 @@ const Men = () => {
           <div className="flex justify-between items-center">
             <motion.img
               className="pr-2 w-5 h-5"
-              src="src/assets/photo/filter-toggle.svg"
+              src="public\filter-toggle.svg"   
               alt="Filter Toggle"
               whileHover={{ rotate: 90 }}
               transition={{ duration: 0.3 }}

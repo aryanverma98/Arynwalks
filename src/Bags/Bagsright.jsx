@@ -25,20 +25,20 @@ const Bagsright = () => {
   return (
     <div className="right pb-10 px-4 sm:px-6">
       <motion.div
-        className="img w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6"
+        className="img grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 pr-0 md:pr-6 w-full"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {[
-          "src/assets/photo/bg1.jpg",
-          "src/assets/photo/bg5.jpg",
-          "src/assets/photo/bg6.jpg",
-          "src/assets/photo/bg2.jpg",
-          "src/assets/photo/bg3.jpg",
-          "src/assets/photo/bg4.jpg",
-          "src/assets/photo/bg5.jpg",
-          "src/assets/photo/bg6.jpg",
+          "bg1.jpg",
+          "bg5.jpg",
+          "bg6.jpg",
+          "bg2.jpg",
+          "bg3.jpg",
+          "bg4.jpg",
+          "bg5.jpg",
+          "bg6.jpg",
         ].map((src, i) => (
           <motion.img
             key={i}

@@ -31,14 +31,14 @@ const Womenright = () => {
         animate="visible"
       >
         {[
-          "src/assets/photo/ws1.jpg",
-          "src/assets/photo/ws5.jpg",
-          "src/assets/photo/ws6.jpg",
-          "src/assets/photo/ws2.jpg",
-          "src/assets/photo/ws3.jpg",
-          "src/assets/photo/ws4.jpg",
-          "src/assets/photo/ws5.jpg",
-          "src/assets/photo/ws6.jpg",
+          "ws1.jpg",
+          "ws5.jpg",
+          "ws6.jpg",
+          "ws2.jpg",
+          "ws3.jpg",
+          "ws4.jpg",
+          "ws5.jpg",
+          "ws6.jpg",
         ].map((src, i) => (
           <motion.img
             key={i}

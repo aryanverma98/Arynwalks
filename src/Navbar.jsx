@@ -101,7 +101,7 @@ const Navbar = () => {
           <Link to="/" className="cursor-pointer">
             <motion.img
               className="w-28 sm:w-36"
-              src="src/assets/photo/new.png"
+              src="public\new.png"
               alt="logo"
               whileHover={{ rotate: -5, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200 }}

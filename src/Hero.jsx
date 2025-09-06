@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./Index.css"; 
 
 const Hero = () => {
   const scrollRef = useRef(null);
@@ -21,7 +20,7 @@ const Hero = () => {
       {/* Hero Banner Image */}
       <motion.img
         className="mt-37 sm:mt-28 w-full shadow-lg rounded-xl"
-        src="src/assets/photo/q.webp"
+        src="/q.webp"
         alt="Hero Banner"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -36,10 +35,10 @@ const Hero = () => {
 
         <div className="buttons flex flex-wrap gap-4 text-sm justify-center rounded-full cursor-pointer pb-10">
           {[
-            { img: "men.jpg", label: "Men", link: "/Men" },
-            { img: "women.jpg", label: "Women", link: "/Women" },
-            { img: "kids.jpg", label: "Kids", link: "/Kids" },
-            { img: "accessories.jpg", label: "Accessories", link: "/Accessories" },
+            { img: "/men.jpg", label: "Men", link: "/Men" },
+            { img: "/women.jpg", label: "Women", link: "/Women" },
+            { img: "/kids.jpg", label: "Kids", link: "/Kids" },
+            { img: "/accessories.jpg", label: "Accessories", link: "/Accessories" },
           ].map((item, i) => (
             <Link to={item.link} key={i}>
               <motion.div
@@ -50,7 +49,7 @@ const Hero = () => {
               >
                 <img
                   className="rounded-full w-8 h-8 sm:w-10 sm:h-10 object-cover"
-                  src={`src/assets/photo/${item.img}`}
+                  src={item.img}
                   alt={item.label}
                 />
                 <p className="ml-2 text-sm sm:text-base">{item.label}</p>
@@ -63,14 +62,14 @@ const Hero = () => {
       {/* Items Section */}
       <div className="items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-6 justify-center px-4 pb-10 text-sm text-gray-700">
         {[
-          { img: "Mochi-Icon-Sandals.jpg", label: "Sandals" },
-          { img: "Mochi-Ic-on-Kolhapuris.jpg", label: "Kolhapuris" },
-          { img: "Mochi-Icon-Jutis.jpg", label: "Jutis" },
-          { img: "Mochi-Icon-LaceUp.jpg", label: "Lace Up" },
-          { img: "Mochi-Icon-Loafers.jpg", label: "Loafers" },
-          { img: "Mochi-Icon-Moccasins.jpg", label: "Moccasins" },
-          { img: "Mochi-Icon-Oxford.jpg", label: "Oxfords" },
-          { img: "Mochi-Icon-Slippers.jpg", label: "Slippers" },
+          { img: "/Mochi-Icon-Sandals.jpg", label: "Sandals" },
+          { img: "/Mochi-Ic-on-Kolhapuris.jpg", label: "Kolhapuris" },
+          { img: "/Mochi-Icon-Jutis.jpg", label: "Jutis" },
+          { img: "/Mochi-Icon-LaceUp.jpg", label: "Lace Up" },
+          { img: "/Mochi-Icon-Loafers.jpg", label: "Loafers" },
+          { img: "/Mochi-Icon-Moccasins.jpg", label: "Moccasins" },
+          { img: "/Mochi-Icon-Oxford.jpg", label: "Oxfords" },
+          { img: "/Mochi-Icon-Slippers.jpg", label: "Slippers" },
         ].map((item, i) => (
           <Link to="/Men" key={i}>
             <motion.div
@@ -86,7 +85,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.9 }}
               >
                 <img
-                  src={`src/assets/photo/${item.img}`}
+                  src={item.img}
                   alt={item.label}
                   className="w-full h-full object-contain"
                 />
@@ -100,12 +99,12 @@ const Hero = () => {
       {/* Banner Section */}
       <div className="banner flex flex-col sm:flex-row gap-6 sm:gap-10 px-4 pb-10 sm:pb-[60px]">
         {[
-          { img: "2.webp", link: "/Women" },
-          { img: "1.webp", link: "/Men" },
+          { img: "/2.webp", link: "/Women" },
+          { img: "/1.webp", link: "/Men" },
         ].map((item, i) => (
           <Link to={item.link} key={i} className="w-full sm:w-1/2">
             <motion.img
-              src={`src/assets/photo/${item.img}`}
+              src={item.img}
               alt="Promo Banner"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -136,12 +135,12 @@ const Hero = () => {
         <div ref={scrollRef} className="h-72 sm:h-80 overflow-x-auto scrollbar-hide">
           <div className="photos flex cursor-pointer gap-4 sm:gap-6 px-6 sm:px-12">
             {[
-              { img: "3.jpg", brand: "Mochi", desc: "Casual Slippers" },
-              { img: "5.jpg", brand: "Mochi", desc: "Casual Slippers" },
-              { img: "6.jpg", brand: "Mochi", desc: "Casual Slippers" },
-              { img: "7.jpeg", brand: "Mochi", desc: "Casual Slippers" },
-              { img: "8.jpg", brand: "Fila", desc: "Casual Shoes" },
-              { img: "9.jpg", brand: "JFontini", desc: "Casual Shoes" },
+              { img: "/3.jpg", brand: "Mochi", desc: "Casual Slippers" },
+              { img: "/5.jpg", brand: "Mochi", desc: "Casual Slippers" },
+              { img: "/6.jpg", brand: "Mochi", desc: "Casual Slippers" },
+              { img: "/7.jpeg", brand: "Mochi", desc: "Casual Slippers" },
+              { img: "/8.jpg", brand: "Fila", desc: "Casual Shoes" },
+              { img: "/9.jpg", brand: "JFontini", desc: "Casual Shoes" },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -150,7 +149,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <img
-                  src={`src/assets/photo/${item.img}`}
+                  src={item.img}
                   alt={item.brand}
                   className="w-full h-40 sm:h-48 object-cover rounded-md shadow-md"
                 />
@@ -180,7 +179,7 @@ const Hero = () => {
       >
         <img
           className="w-full rounded-lg shadow-lg"
-          src="src/assets/photo/rain.webp"
+          src="/rain.webp"
           alt="Rain Banner"
         />
       </motion.div>

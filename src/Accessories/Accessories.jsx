@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Accitems from "./Accitems";
 import Left from "../Left";
-import Accright from "./accright";
+import Accright from "./Accright";
 
 const Accessories = () => {
   return (

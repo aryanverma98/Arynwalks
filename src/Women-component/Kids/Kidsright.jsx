@@ -31,14 +31,14 @@ const Kidsright = () => {
         animate="visible"
       >
         {[
-          "src/assets/photo/ks.jpg",
-          "src/assets/photo/ks5.jpg",
-          "src/assets/photo/ks6.jpg",
-          "src/assets/photo/ks2.jpg",
-          "src/assets/photo/ks3.jpg",
-          "src/assets/photo/ks4.jpg",
-          "src/assets/photo/ks5.jpg",
-          "src/assets/photo/ks6.jpg",
+          "ks.jpg",
+          "ks5.jpg",
+          "ks6.jpg",
+          "ks2.jpg",
+          "ks3.jpg",
+          "ks4.jpg",
+          "ks5.jpg",
+          "ks6.jpg",
         ].map((src, i) => (
           <motion.img
             key={i}

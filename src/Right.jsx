@@ -29,14 +29,14 @@ const Right = () => {
         animate="visible"
       >
         {[
-          "src/assets/photo/s1.jpg",
-          "src/assets/photo/s5.jpg",
-          "src/assets/photo/s6.jpg",
-          "src/assets/photo/s2.jpg",
-          "src/assets/photo/s3.jpg",
-          "src/assets/photo/s4.jpg",
-          "src/assets/photo/s5.jpg",
-          "src/assets/photo/s6.jpg",
+                    "/s1.jpg",
+              "/s2.jpg",
+              "/s3.jpg",
+              "/s4.jpg",
+              "/s5.jpg",
+              "/s6.jpg",
+              "/s2.jpg",
+              "/s3.jpg",
         ].map((src, i) => (
           <motion.img
             key={i}
