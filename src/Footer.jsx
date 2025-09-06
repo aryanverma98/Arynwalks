@@ -107,7 +107,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="public\ig-instagram-icon.svg"
+                src="\ig-instagram-icon.svg"
                 alt="Instagram"
                 className="w-6 cursor-pointer hover:scale-110 transition"
               />

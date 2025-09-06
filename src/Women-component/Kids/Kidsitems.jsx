@@ -45,7 +45,7 @@ const Kidsitems = () => {
         >
           <div className="w-20 sm:w-24 md:w-28 lg:w-32 flex items-center justify-center">
             <img
-              src={`public/${item.img}`}
+              src={`/${item.img}`}
               alt={item.label}
               className="max-w-full h-auto"
             />

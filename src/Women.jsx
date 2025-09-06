@@ -37,7 +37,7 @@ const Women = () => {
           <div className="flex justify-between items-center">
             <motion.img
               className="pr-2 w-5 h-5"
-              src="src/assets/photo/filter-toggle.svg"
+              src="/filter-toggle.svg"
               alt="Filter Toggle"
               whileHover={{ rotate: 90 }}
               transition={{ duration: 0.3 }}
