@@ -1,15 +1,22 @@
-import React, { createContext, useContext, useState, useRef } from "react";
+
+import React, { createContext, useContext, useState } from "react";
 
 const WishlistContext = createContext();
 
 export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
-  const wishlistIconRef = useRef(null);
 
   const addToWishlist = (item) => {
     setWishlist((prev) => {
-      if (prev.find((s) => s.id === item.id)) return prev; // avoid duplicates
-      return [...prev, item]; // ✅ includes {id, name, price, src}
+      if (prev.find((s) => s.id === item.id)) return prev; 
+
+      const wishlistItem = {
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        image: item.image || item.src, 
+      };
+      return [...prev, wishlistItem];
     });
   };
 
@@ -18,9 +25,7 @@ export const WishlistProvider = ({ children }) => {
   };
 
   return (
-    <WishlistContext.Provider
-      value={{ wishlist, addToWishlist, removeFromWishlist, wishlistIconRef }}
-    >
+    <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist }}>
       {children}
     </WishlistContext.Provider>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Plus, Heart } from "lucide-react";
 import { useWishlist } from "../WishlistContext";
-import { useCart } from "../CartContext"; // ✅ import CartContext
+import { useCart } from "../CartContext";
 
 const ShoeCard = ({ shoe, addToWishlist, addToCart }) => {
   const wishlistControls = useAnimation();
@@ -86,7 +86,7 @@ const ShoeCard = ({ shoe, addToWishlist, addToCart }) => {
 
 const Womenright = () => {
   const { addToWishlist } = useWishlist();
-  const { addToCart } = useCart(); // ✅ get addToCart
+  const { addToCart } = useCart(); 
 
   const womenShoes = [
     { id: 1, image: "/ws1.jpg", price: "₹2200", name: "Shoe 1" },

@@ -1,15 +1,15 @@
-// src/components/Kidsright.jsx
+
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Plus, Heart } from "lucide-react";
 import { useWishlist } from "../../WishlistContext";
-import { useCart } from "../../CartContext"; // ✅ import CartContext
+import { useCart } from "../../CartContext";
 
 const ShoeCard = ({ shoe, addToWishlist, addToCart }) => {
   const wishlistControls = useAnimation();
   const cartControls = useAnimation();
 
-  // Wishlist click
+
   const handleWishlistClick = async () => {
     addToWishlist(shoe);
 
@@ -86,7 +86,7 @@ const ShoeCard = ({ shoe, addToWishlist, addToCart }) => {
 
 const Kidsright = () => {
   const { addToWishlist } = useWishlist();
-  const { addToCart } = useCart(); // ✅ get addToCart
+  const { addToCart } = useCart();
 
   const kidsShoes = [
     { id: 1, image: "/ks.jpg", price: "₹900", name: "Kids Shoe 1" },
@@ -107,7 +107,7 @@ const Kidsright = () => {
             key={shoe.id}
             shoe={shoe}
             addToWishlist={addToWishlist}
-            addToCart={addToCart} // ✅ pass addToCart
+            addToCart={addToCart} 
           />
         ))}
       </div>

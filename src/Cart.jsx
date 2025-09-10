@@ -1,13 +1,13 @@
-// src/Cart.jsx
+
 import React from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useCart } from "./CartContext";
-import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 const Cart = () => {
   const { cartItems: cart, removeFromCart } = useCart();
-  const navigate = useNavigate(); // ✅ Initialize navigate
+  const navigate = useNavigate();
 
   // Calculate total price
   const totalPrice = cart.reduce((total, item) => {
@@ -86,8 +86,8 @@ const Cart = () => {
           {/* Checkout Button */}
           <div className="mt-4 text-right">
             <button
-              onClick={() => navigate("/checkout")} // ✅ Navigate to /checkout
-              className="px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition"
+              onClick={() => navigate("/checkout")} 
+              className="px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition "
             >
               Proceed to Checkout
             </button>

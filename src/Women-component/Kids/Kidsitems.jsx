@@ -12,7 +12,7 @@ const kidsItems = [
   { img: "w2.png", label: "Oxfords" },
 ];
 
-// Variants for stagger animation
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {

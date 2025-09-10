@@ -3,7 +3,7 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Plus, Heart } from "lucide-react";
 import { useWishlist } from "../WishlistContext";
-import { useCart } from "../CartContext"; // ✅ import CartContext
+import { useCart } from "../CartContext"; 
 
 const BagCard = ({ bag, addToWishlist, addToCart }) => {
   const wishlistControls = useAnimation();
@@ -87,7 +87,7 @@ const BagCard = ({ bag, addToWishlist, addToCart }) => {
 
 const Bagsright = () => {
   const { addToWishlist } = useWishlist();
-  const { addToCart } = useCart(); // ✅ get addToCart
+  const { addToCart } = useCart(); 
 
   const bags = [
     { id: 1, name: "Bag 1", src: "/bg1.jpg", price: "₹1800" },
@@ -112,7 +112,7 @@ const Bagsright = () => {
             key={bag.id}
             bag={bag}
             addToWishlist={addToWishlist}
-            addToCart={addToCart} // ✅ pass addToCart
+            addToCart={addToCart} 
           />
         ))}
       </motion.div>

@@ -2,13 +2,13 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Plus, Heart } from "lucide-react";
 import { useWishlist } from "./WishlistContext";
-import { useCart } from "./CartContext"; // ✅ import CartContext
+import { useCart } from "./CartContext"; 
 
 const Right = () => {
   const { addToWishlist } = useWishlist();
-  const { addToCart } = useCart(); // ✅ get addToCart
+  const { addToCart } = useCart(); 
   const wishlistControls = useAnimation(); 
-  const cartControls = useAnimation(); // separate animation for cart
+  const cartControls = useAnimation(); 
 
   const shoes = [
     { id: 1, src: "/s1.jpg", price: "RS 520", name: "Shoe 1" },
@@ -50,8 +50,7 @@ const Right = () => {
 
     cartControls.set({ x: 0, y: 0, scale: 1, opacity: 1 });
 
-    // Optionally redirect to Cart page
-    // window.location.href = "/cart";
+  
   };
 
   return (

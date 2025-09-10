@@ -6,7 +6,7 @@ import Bagsright from "./Bagsright";
 
 const Bags = () => {
   return (
-    <div className="pt-50 sm:pt-52"> {/* Pushes below navbar */}
+    <div className="pt-50 sm:pt-52"> 
       {/* Heading */}
       <div className="px-4 sm:pl-8 text-xs sm:text-sm pb-15">
         <h2 className="text-xl sm:text-2xl font-semibold text-black pb-2">
@@ -21,7 +21,7 @@ const Bags = () => {
       {/* Items Section */}
       <Bagsitems />
 
-      {/* Filters Section (Sticky under navbar) */}
+     
       <motion.div
         className="filters sticky top-20 sm:top-24 z-20 bg-white w-full shadow-md"
         initial={{ y: -40, opacity: 0 }}
@@ -31,7 +31,7 @@ const Bags = () => {
         <hr className="opacity-20" />
 
         <div className="h-12 sm:h-15 flex items-center text-xs justify-between px-4 sm:px-10">
-          {/* Left Side: Hide Filters */}
+         
           <div className="flex justify-between items-center">
             <motion.img
               className="pr-2 w-5 h-5"
@@ -51,7 +51,7 @@ const Bags = () => {
             </div>
           </div>
 
-          {/* Right Side: Sort By */}
+         
           <div className="border-l border-gray-300 h-6 sm:h-15 flex items-center">
             <motion.p
               className="pl-4 sm:pl-8 cursor-pointer"

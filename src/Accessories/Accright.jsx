@@ -1,9 +1,9 @@
-// src/Accright.jsx
+
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Plus, Heart } from "lucide-react";
 import { useWishlist } from "../WishlistContext";
-import { useCart } from "../CartContext"; // ✅ import CartContext
+import { useCart } from "../CartContext";
 
 const AccCard = ({ item, addToWishlist, addToCart }) => {
   const wishlistControls = useAnimation();
@@ -87,7 +87,7 @@ const AccCard = ({ item, addToWishlist, addToCart }) => {
 
 const Accright = () => {
   const { addToWishlist } = useWishlist();
-  const { addToCart } = useCart(); // ✅ get addToCart
+  const { addToCart } = useCart(); 
 
   const accessories = [
     { id: 1, name: "Accessory 1", src: "/ac1.jpg", price: "₹1200" },
@@ -112,7 +112,7 @@ const Accright = () => {
             key={item.id}
             item={item}
             addToWishlist={addToWishlist}
-            addToCart={addToCart} // ✅ pass addToCart
+            addToCart={addToCart} 
           />
         ))}
       </motion.div>

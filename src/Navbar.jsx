@@ -1,10 +1,8 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { useCart } from "./CartContext";
-
 
 const fadeInDown = {
   hidden: { opacity: 0, y: -20 },
@@ -18,7 +16,7 @@ const staggerParent = {
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const { cartItems } = useCart(); // ✅ dynamic cart count
+  const { cartItems } = useCart();
 
   return (
     <div className="fixed top-0 w-full z-50">
@@ -34,10 +32,7 @@ const Navbar = () => {
 
       {/* Service Bar */}
       <motion.div
-        className="
-          service flex flex-col sm:flex-row justify-between items-center
-          h-auto sm:h-12 text-xs sm:text-sm px-4 sm:px-10 font-semibold bg-white py-2 sm:py-0
-        "
+        className="service flex flex-col sm:flex-row justify-between items-center h-auto sm:h-12 text-xs sm:text-sm px-4 sm:px-10 font-semibold bg-white py-2 sm:py-0"
         initial="hidden"
         animate="visible"
         variants={staggerParent}
@@ -141,32 +136,21 @@ const Navbar = () => {
           </motion.ul>
         </div>
 
-        {/* Right Icons */}
+        {/* Desktop Right Icons */}
         <motion.div
           className="hidden md:flex gap-4 cursor-pointer text-lg"
           variants={staggerParent}
           initial="hidden"
           animate="visible"
         >
-          {/* Search */}
-          <motion.div
-            whileHover={{ scale: 1.2, color: "#6B21A8" }}
-            variants={fadeInDown}
-          >
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </motion.div>
+       
 
-          {/* Wishlist */}
-          <motion.div
-            whileHover={{ scale: 1.2, color: "#6B21A8" }}
-            variants={fadeInDown}
-          >
+          <motion.div whileHover={{ scale: 1.2, color: "#6B21A8" }} variants={fadeInDown}>
             <Link to="/wishlist">
               <i className="fa-solid fa-heart"></i>
             </Link>
           </motion.div>
 
-          {/* Cart with dynamic count */}
           <motion.div
             whileHover={{ scale: 1.2, color: "#6B21A8" }}
             className="flex items-center"
@@ -174,15 +158,25 @@ const Navbar = () => {
           >
             <Link to="/cart" className="flex items-center">
               <i className="fa-solid fa-bag-shopping"></i>
-              <span className="text-xs font-medium pl-1">
-                {cartItems.length} items
-              </span>
+              <span className="text-xs font-medium pl-1">{cartItems.length} items</span>
             </Link>
           </motion.div>
         </motion.div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        {/* Mobile Right Icons */}
+        <div className="flex md:hidden items-center gap-4">
+          {/* Wishlist */}
+          <Link to="/wishlist" className="flex items-center text-lg">
+            <i className="fa-solid fa-heart"></i>
+          </Link>
+
+          {/* Cart */}
+          <Link to="/cart" className="flex items-center text-lg">
+            <i className="fa-solid fa-bag-shopping"></i>
+            <span className="text-xs font-medium pl-1">{cartItems.length}</span>
+          </Link>
+
+          {/* Mobile Menu Button */}
           <button onClick={() => setMobileMenu(!mobileMenu)}>
             {mobileMenu ? <HiX className="text-2xl" /> : <HiMenuAlt3 className="text-2xl" />}
           </button>
@@ -191,11 +185,12 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {mobileMenu && (
           <motion.div
-            className="pl-10 absolute top-16 left-0 w-full bg-white shadow-md flex flex-col p-4 gap-4 z-40"
+            className="pl-6 absolute top-16 left-0 w-full bg-white shadow-md flex flex-col p-4 gap-4 z-40"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
+            {/* Nav Links */}
             {["MENS", "WOMEN", "KIDS", "ACCESSORIES", "BAGS", "MORE"].map(
               (item, i) => (
                 <Link
@@ -212,6 +207,10 @@ const Navbar = () => {
                 </Link>
               )
             )}
+
+
+     
+           
           </motion.div>
         )}
       </nav>
