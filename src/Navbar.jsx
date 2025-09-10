@@ -1,7 +1,10 @@
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { useCart } from "./CartContext";
+
 
 const fadeInDown = {
   hidden: { opacity: 0, y: -20 },
@@ -10,14 +13,12 @@ const fadeInDown = {
 
 const staggerParent = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
 };
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const { cartItems } = useCart(); // ✅ dynamic cart count
 
   return (
     <div className="fixed top-0 w-full z-50">
@@ -101,7 +102,7 @@ const Navbar = () => {
           <Link to="/" className="cursor-pointer">
             <motion.img
               className="w-28 sm:w-36"
-              src="public\new.png"
+              src="\new.png"
               alt="logo"
               whileHover={{ rotate: -5, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200 }}
@@ -147,30 +148,43 @@ const Navbar = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div whileHover={{ scale: 1.2, color: "#6B21A8" }} variants={fadeInDown}>
+          {/* Search */}
+          <motion.div
+            whileHover={{ scale: 1.2, color: "#6B21A8" }}
+            variants={fadeInDown}
+          >
             <i className="fa-solid fa-magnifying-glass"></i>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.2, color: "#6B21A8" }} variants={fadeInDown}>
-            <i className="fa-solid fa-heart"></i>
+
+          {/* Wishlist */}
+          <motion.div
+            whileHover={{ scale: 1.2, color: "#6B21A8" }}
+            variants={fadeInDown}
+          >
+            <Link to="/wishlist">
+              <i className="fa-solid fa-heart"></i>
+            </Link>
           </motion.div>
+
+          {/* Cart with dynamic count */}
           <motion.div
             whileHover={{ scale: 1.2, color: "#6B21A8" }}
             className="flex items-center"
             variants={fadeInDown}
           >
-            <i className="fa-solid fa-bag-shopping"></i>
-            <span className="text-xs font-medium pl-1">0 items</span>
+            <Link to="/cart" className="flex items-center">
+              <i className="fa-solid fa-bag-shopping"></i>
+              <span className="text-xs font-medium pl-1">
+                {cartItems.length} items
+              </span>
+            </Link>
           </motion.div>
         </motion.div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setMobileMenu(!mobileMenu)}>
-            {mobileMenu ? (
-              <HiX className="text-2xl" />
-            ) : (
-              <HiMenuAlt3 className="text-2xl" />
-            )}
+            {mobileMenu ? <HiX className="text-2xl" /> : <HiMenuAlt3 className="text-2xl" />}
           </button>
         </div>
 

@@ -139,6 +139,8 @@ const Hero = () => {
               { img: "/5.jpg", brand: "Mochi", desc: "Casual Slippers" },
               { img: "/6.jpg", brand: "Mochi", desc: "Casual Slippers" },
               { img: "/7.jpeg", brand: "Mochi", desc: "Casual Slippers" },
+              { img: "/6.jpg", brand: "Mochi", desc: "Casual Slippers" },
+              { img: "/7.jpeg", brand: "Mochi", desc: "Casual Slippers" },
               { img: "/8.jpg", brand: "Fila", desc: "Casual Shoes" },
               { img: "/9.jpg", brand: "JFontini", desc: "Casual Shoes" },
             ].map((item, i) => (
